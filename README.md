@@ -8,4 +8,5 @@ Some codes while learning JS
 - bind polyfill
 - promise polyfill
 - new polyfill
+- Deep clone arrays and objs
 
