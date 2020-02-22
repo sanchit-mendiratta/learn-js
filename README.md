@@ -9,4 +9,4 @@ Some codes while learning JS
 - promise polyfill
 - new polyfill
 - Deep clone arrays and objs
-
+ JS Design Patterns
