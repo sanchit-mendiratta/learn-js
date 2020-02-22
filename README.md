@@ -1,12 +1,14 @@
-# LearningJS
-Some codes while learning JS
+# LearnJS
 
-- debouncing
-- throttling
+Here is a list of concepts I feel are important to learn in Javascript. 
+Most of these concepts are required to be known by developers working on large projects.
+
+- Debouncing & Throttling
 - Object comparison
-- memoisation
-- bind polyfill
-- promise polyfill
-- new polyfill
-- Deep clone arrays and objs
+- Memoisation
+- Polyfills
+  - Bind
+  - New
+  - Promise
+- Deep cloning Arrays and Objects
 
