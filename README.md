@@ -10,5 +10,6 @@ Most of these concepts are required to be known by developers working on large p
   - Bind
   - New
   - Promise
+  - Dom QuerySelector Api
 - Deep cloning Arrays and Objects
 - Design Patterns

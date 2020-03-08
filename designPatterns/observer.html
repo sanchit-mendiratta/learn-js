@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer</title>
+</head>
+
+<body>
+    <button id="myBtn">Click Me!! </button>
+</body>
+<script>
+    var Observer = (function () {
+        var subscribers = {};
+        return {
+            subscribe: function (event, subscriber) {
+                if (!subscribers[event]) {
+                    subscribers[event] = [];
+                }
+                subscribers[event].push(subscriber);
+            },
+            unsubscribe: function (subscribe) {
+                //subscribers.remove(subscriber);
+            },
+            getSubscribers: function () {
+                //return subscribers;
+            },
+            sendMessage: function (event, message) {
+                var subs = subscribers[event];
+                for (var i = 0; i < subs.length; i++) {
+                    var sub = subs[i];
+                    sub.call(null, message);
+                }
+            },
+            sendMessageTo: function () {
+
+            }
+        }
+    })();
+
+    Observer.subscribe("event", function (message) {
+        console.log("1 received: " + message);
+    });
+    Observer.subscribe("event", function (message) {
+        console.log("2 received: " + message);
+    });
+    Observer.subscribe("event3", function (message) {
+        console.log("3 received: " + message);
+    });
+
+    var oBtn = document.getElementById("myBtn");
+    oBtn.addEventListener("click", () => {
+        console.log(this);
+        Observer.sendMessage("event3", "I have been Clicked");
+    });
+
+</script>
+
+</html>

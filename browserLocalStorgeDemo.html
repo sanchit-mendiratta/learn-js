@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="myInput" placeholder="Enter Something Here:"></input>
+    <button id="myButton">Save my Input to local Storage</button>
+    <button id="myButton2">Clear my local Storage</button>
+
+    <ol id="myList">
+    </ol>
+
+    <script>
+        var myInput = document.getElementById("myInput");
+        var todoList = document.getElementById("myList");
+        document.getElementById("myButton").addEventListener("click", (event) => {
+            var inputValue = myInput.value;
+            var myList = localStorage.getItem("list");
+            if (myList) {
+                myList = JSON.parse(myList);
+            } else {
+                myList = [];
+            }
+            if (inputValue) {
+                myList.push(inputValue);
+                var item = document.createElement("li");
+                item.innerHTML = inputValue;
+                todoList.appendChild(item);
+            }
+            localStorage.setItem("list", JSON.stringify(myList));
+            myInput.value = "";
+            console.log(localStorage);
+        });
+        document.getElementById("myButton2").addEventListener("click", (event) => {
+            localStorage.clear();
+            todoList.innerHTML = "";
+            console.log(localStorage);
+        });
+
+        var showList = localStorage.getItem("list");
+        if (showList) {
+            showList = JSON.parse(showList);
+        }
+        showList.forEach((inputValue) => {
+            var item = document.createElement("li");
+            item.innerHTML = inputValue;
+            todoList.appendChild(item);
+        });
+    </script>
+</body>
+
+</html>

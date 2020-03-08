@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mainDiv {
+            position: relative;
+            height: 100px;
+            width: 100%;
+            color: white;
+        }
+
+        .mainDivTable {
+            height: 100px;
+            width: 100%;
+            display: table;
+            text-align: center;
+            color: white;
+        }
+
+        .div1 {
+            height: 100px;
+            background: violet;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .div2 {
+            width: 100%;
+            position: absolute;
+            background: indigo;
+            top: 50%;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+
+        .div3 {
+            height: 100%;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .div4 {
+            background: green;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .div5 {
+            background: red;
+            height: 100%;
+            text-align: center;
+        }
+
+        .div5>p {
+            position: relative;
+            top: 50%;
+            margin: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainDiv">
+        <div class="div1">Give fixed height and equal line height.</div>
+    </div>
+    <div class="mainDiv">
+        <div class="div2">Using transform translate</div>
+    </div>
+    <div class="mainDiv">
+        <div class="div3">Using Flex Layout</div>
+    </div>
+    <div class="mainDivTable">
+        <div class="div4">Using Display Table</div>
+        <div class="div4">Using Display Table</div>
+    </div>
+    <div class="mainDiv">
+        <div class="div5">
+            <p>Hello5</p>
+        </div>
+    </div>
+</body>
+
+</html>

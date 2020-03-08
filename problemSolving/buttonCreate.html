@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="destroy">Click Me!</button>
+    <script>
+        function destroy(event) {
+            event.target.parentElement.removeChild(event.target);
+            var b1 = document.createElement("button");
+            b1.innerHTML = "Click Me";
+            var b2 = document.createElement("button");
+            b1.addEventListener("click", destroy);
+            b2.addEventListener("click", destroy);
+            document.body.appendChild(b1);
+            document.body.appendChild(b2);
+
+        }
+        var destroyer = document.getElementById("destroy");
+        destroyer.addEventListener("click", destroy);
+
+    </script>
+</body>
+
+</html>

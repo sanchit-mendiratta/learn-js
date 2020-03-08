@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myBtn">Click Me to Publish Event to All!! </button>
+
+    <button id="myBtn1">Click Me to Publish Event to Subscribers 1 and 2 !! </button>
+
+    <script>
+        class Observer {
+            constructor() {
+                this.subscribers = {};
+            }
+            subscribe(event, subscriberCallback) {
+                if (!this.subscribers[event]) {
+                    this.subscribers[event] = [];
+                }
+                this.subscribers[event].push(subscriberCallback);
+            }
+            unsubscribe(event) {
+                if (!this.subscribers[event]) {
+                    console.log("The Event does not exist!!");
+                    return false;
+                }
+                this.subscribers[event] = [];
+            }
+            getAllSubscribers() {
+                console.table(this.subscribers);
+            }
+            publish(event) {
+                var subs = this.subscribers[event];
+                var args = Array.prototype.slice.call(arguments, 1);
+                subs.forEach((sub) => {
+                    sub.apply(this, args);
+                });
+            }
+        }
+
+        var observer = new Observer();
+
+        observer.subscribe("event", function (message) {
+            console.log("1 received: " + message);
+        });
+        observer.subscribe("event", function (message) {
+            console.log("2 received: " + message);
+        });
+        observer.subscribe("event", function (message) {
+            console.log("3 received: " + message);
+        });
+
+        var oBtn = document.getElementById("myBtn");
+        oBtn.addEventListener("click", () => {
+            observer.publish("event", "I have been Clicked by 1");
+            observer.unsubscribe("event");
+        });
+
+        observer.subscribe("event2", function (message) {
+            console.log("1 received: " + message);
+        });
+        observer.subscribe("event2", function (message) {
+            console.log("2 received: " + message);
+        });
+
+        var oBtn1 = document.getElementById("myBtn1");
+        oBtn1.addEventListener("click", () => {
+            observer.publish("event2", "I have been Clicked by 2");
+        });
+
+        observer.getAllSubscribers();
+    </script>
+</body>
+
+</html>
