@@ -14,7 +14,7 @@ How to improve Load Time Performce of a webpage ?
 
 - Make fewer HTTP requests.
 - Use a CDN.
-- Add an Expires header. (see Horizonte security wiki for how to set headers in Horizonte)
+- Add an Expires header.
 - Gzip components.
 - Put stylesheets at the top -- ensure styles are loaded before content is rendered, and want to show content as fast as possible
 - Put scripts at the bottom. -- nothing else below a script can load til the script is loaded, and its more important to load content such as images first, before adding interaction capabilities (javascript)
