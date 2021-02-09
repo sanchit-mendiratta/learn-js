@@ -11,3 +11,18 @@ How to improve Load Time Performce of a webpage ?
 10) Image Optimizations - correct size, format - webP jpg, lossless compressed
 11) Improve Network Latency - time taken by files to travel through internet
 12) Server Side Rendering
+
+- Make fewer HTTP requests.
+- Use a CDN.
+- Add an Expires header. (see Horizonte security wiki for how to set headers in Horizonte)
+- Gzip components.
+- Put stylesheets at the top -- ensure styles are loaded before content is rendered, and want to show content as fast as possible
+- Put scripts at the bottom. -- nothing else below a script can load til the script is loaded, and its more important to load content such as images first, before adding interaction capabilities (javascript)
+- Avoid CSS expressions (example: margin: expression(document.body.offsetWidth - 110 + "px");)
+- Make JavaScript and CSS external (don't use inline JS/CSS -- works against caching abilities of browser for JS & CSS files)
+- Reduce DNS lookups.
+- Minify JavaScript.
+- Avoid redirects.
+- Remove duplicate scripts.
+- Configure ETags.
+- Make Ajax cacheable.
