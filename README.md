@@ -1,7 +1,7 @@
 # LearnJS
 
-Here is a list of concepts I feel are important to learn in Javascript. 
-Most of these concepts are required to be known by developers working on large projects.
+Here is a list of concepts that I feel are important to learn in Javascript. 
+Most of these concepts should be known to developers working on large projects.
 
 - Debouncing & Throttling
 - Object comparison

@@ -1,21 +1,32 @@
 function myNew(constructor) {
-    var obj = Object.create(constructor.prototype);
-    var otherArgs = Array.prototype.slice.call(arguments, 1);
-    constructor.apply(obj, otherArgs);
+    let obj = Object.create(constructor.prototype);
+    // above line is equivalent to: 
+    // let obj = {};
+    // Object.setPrototypeOf(obj, constructor.prototype);
+    let args = Array.from(arguments);
+    constructor.apply(obj, args.slice(1));
     return obj;
 }
 
-function example(arg1, arg2) {
-    console.log(this);
-    console.log(arg1);
-    console.log(arg2);
+// Example with Function Constructor
+function MyFunc(name) {
+    this.name = name;
 }
-
-example.prototype.sayHi = function() {
-    console.log("Hi");
+MyFunc.prototype.getName = function () {
+    return this.name;
 }
+let instance = myNew(MyFunc, "Sanchit");
+console.log(instance.getName());
 
-var instance = myNew(example, "Ins1", "Ins2");
-
-console.log(instance);
-instance.sayHi();
+// Example with Class
+class MyClass {
+    constructor(name) {
+        this.name = name;
+    }
+    getName() {
+        return this.name;
+    }
+}
+let instance2 = myNew(MyClass, "Sanchit");
+// this does not work as ECMAScript spec explicitly disallows calling a class without new
+console.log(instance2.getName());

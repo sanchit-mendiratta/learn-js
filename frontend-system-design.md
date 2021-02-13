@@ -1,5 +1,5 @@
 ### Requirements gathering and define MVP
-  - Functional Requirements: What does the application do ?
+  - Functional Requirements: What does the application do?
   - Non-Functional Requirements:
     - Platforms to support (mobile, web, smart tv)?
     - Native App vs Web App vs PWA vs Hybrid App
