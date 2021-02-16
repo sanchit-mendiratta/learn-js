@@ -51,6 +51,7 @@ Here is a list of concepts that I feel are important to learn if you are prepari
 
 ## HTML/CSS Question
 - How will you vertically center align text on screen
+- What is CSS Box model
 
 ## HTTP methods
 - GET
@@ -98,3 +99,7 @@ Here is a list of concepts that I feel are important to learn if you are prepari
 - Longest Palindrome
 - Longest Substring
 - Group Anagrams
+
+## Most Important
+- CSS Box Model
+- Closures
