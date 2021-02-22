@@ -32,7 +32,7 @@ Here is a list of concepts that I feel are important to learn if you are prepari
   - Dom QuerySelector Api
 
 ## Design Patterns for FEEs
-  - Module Pattern: import/Export, IIFEs, React Components
+  - Module Pattern
   - Observer or Pub/Sub
   - Builder Pattern 
   - Class Inheritance vs Prototypal Inheritance
@@ -42,16 +42,26 @@ Here is a list of concepts that I feel are important to learn if you are prepari
 ## [How to improve Load Time Performance of a webpage](performance_points.md)
 
 ## [How to do Frontend System Design](frontend-system-design.md)
+- How would you design an IDE like Visual Studio
+- How would you design Instagram
+- How would you design Uber
+- How would you design OpenTable
+- How would you design Dropbox / iCloud
+- How would you design a shopping cart for Amazon.com
+- How would you design the photo gallery app on iOS
+- How would you design a distributed cache
+- How would you design an API for a running app
+- How would you design an API for a tic tac toe game
 
 ## Problem Solving Questions specific to JS
 - Write code to print numbers 1-10 on screen printing each number at a gap of 1 second.
 
 ## Browser related questions
-- Difference between local storage, session storage and cookies
+- Difference between local storage, session storage and cookies.
 
 ## HTML/CSS Question
-- How will you vertically center align text on screen
-- What is CSS Box model
+- How will you vertically center align text on screen.
+- What is CSS Box model.
 
 ## HTTP methods
 - GET
@@ -79,27 +89,4 @@ Here is a list of concepts that I feel are important to learn if you are prepari
 - 503: Service Unavailable
 - 504: Gateway Timeout
 
-## Problem Solving Questions for practice
-- Sum of Numbers
-- Factorial of a Number
-- Fibonacci Sequence
-- Prime Numbers
-- Palindrome
-- Anagram
-- Reverse Words
-- Remove Vowels from a String
-- Palindromic Substrings
-- Array of Fullnames
-- Longest Word in a String
-- Array and Index
-- Union Intersection Difference
-- Flatten Array
-- Duplicate Elements
-- Non Repeating Words
-- Longest Palindrome
-- Longest Substring
-- Group Anagrams
-
-## Most Important
-- CSS Box Model
-- Closures
+## [Problem Solving Questions for practice] (problemSolving/questions.md)
